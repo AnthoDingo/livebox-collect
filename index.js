@@ -94,5 +94,21 @@ function Livebox( host, login, password ) {
     callback );
   }
 
+  obj.getWANSatus = function( callback ) {
+    _stdCall ( request, contextID, {
+      "service"   : "NMC",
+      "method"    : "getWANStatus",
+      "parameters" : {}
+    }, callback );
+  }
+
+  obj.getIPv6 = function( callback ) {
+    _stdCall ( request, contextID, {
+      "service"   : "NMC.IPv6",
+      "method"    : "get",
+      "parameters" : {}
+    }, callback );
+  }
+
   return obj;
 }
